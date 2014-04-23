@@ -1,0 +1,33 @@
+{
+  "name": "node-beats",
+  "version": "0.0.0",
+  "description": "A Node.js wrapper around the server side elements of the Beats Music API",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/lab/bin/lab -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/petreboy14/node-beats.git"
+  },
+  "keywords": [
+    "beats",
+    "music",
+    "api",
+    "developer"
+  ],
+  "author": "Peter Henning",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petreboy14/node-beats/issues"
+  },
+  "homepage": "https://github.com/petreboy14/node-beats",
+  "devDependencies": {
+    "jshint": "^2.5.0",
+    "precommit-hook": "^0.4.1",
+    "lab": "^3.0.1"
+  },
+  "dependencies": {
+    "hyperquest": "^0.3.0"
+  }
+}
