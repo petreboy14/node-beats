@@ -25,7 +25,8 @@
   "devDependencies": {
     "jshint": "^2.5.0",
     "precommit-hook": "^0.4.1",
-    "lab": "^3.0.1"
+    "lab": "^3.0.1",
+    "should": "^3.3.1"
   },
   "dependencies": {
     "hyperquest": "^0.3.0"
