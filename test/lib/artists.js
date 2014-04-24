@@ -56,4 +56,22 @@ describe('Artist tests', function () {
       });
     });
   });
+
+  describe('#getArtistById tests', { timeout: 5000 }, function () {
+    it('should be able to get an artist by id', function (done) {
+      artists.getArtistById('ar9966', function (err, artist) {
+        should.not.exist(err);
+        should.exist(artist);
+        should.exist(artist.data);
+        done();
+      });
+    });
+
+    it('should give an error when a bad id is given', function (done) {
+      artists.getArtistById('sdasdad', function (err, artist) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
 });
