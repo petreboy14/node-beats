@@ -59,7 +59,7 @@ describe('Artist tests', function () {
 
   describe('#getArtistById tests', { timeout: 5000 }, function () {
     it('should be able to get an artist by id', function (done) {
-      artists.getArtistById('ar9966', function (err, artist) {
+      artists.getArtistById({ id: 'ar9966' }, function (err, artist) {
         should.not.exist(err);
         should.exist(artist);
         should.exist(artist.data);
@@ -68,7 +68,121 @@ describe('Artist tests', function () {
     });
 
     it('should give an error when a bad id is given', function (done) {
-      artists.getArtistById('sdasdad', function (err, artist) {
+      artists.getArtistById({id: 'sdasdad'}, function (err, artist) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
+
+  describe('#getArtistAlbums tests', { timeout: 5000 }, function () {
+    it('should be able to get an artists albums', function (done) {
+      artists.getArtistAlbums({ id: 'ar9966', limit: 5 }, function (err, albums) {
+        should.not.exist(err);
+        should.exist(albums);
+        should.exist(albums.data);
+        albums.should.have.keys(['data', 'info', 'code']);
+        done();
+      });
+    });
+
+    it('should give an error when a bad id is given', function (done) {
+      artists.getArtistAlbums({id: 'sdasdad'}, function (err, artist) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
+
+  describe('#getArtistEssentialAlbums tests', { timeout: 5000 }, function () {
+    it('should be able to get an artists albums', function (done) {
+      artists.getArtistEssentialAlbums({ id: 'ar9966' }, function (err, albums) {
+        should.not.exist(err);
+        should.exist(albums);
+        should.exist(albums.data);
+        albums.should.have.keys(['data', 'info', 'code']);
+        done();
+      });
+    });
+
+    it('should give an error when a bad id is given', function (done) {
+      artists.getArtistEssentialAlbums({id: 'sdasdad'}, function (err, artist) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
+
+  describe('#getArtistTracks tests', { timeout: 5000 }, function () {
+    it('should be able to get an artists tracks', function (done) {
+      artists.getArtistTracks({ id: 'ar9966' }, function (err, albums) {
+        should.not.exist(err);
+        should.exist(albums);
+        should.exist(albums.data);
+        albums.should.have.keys(['data', 'info', 'code']);
+        done();
+      });
+    });
+
+    it('should give an error when a bad id is given', function (done) {
+      artists.getArtistTracks({id: 'sdasdad'}, function (err, artist) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
+
+  describe('#getArtistPlaylists tests', { timeout: 5000 }, function () {
+    it('should be able to get an artists playlists', function (done) {
+      artists.getArtistPlaylists({ id: 'ar9966' }, function (err, albums) {
+        should.not.exist(err);
+        should.exist(albums);
+        should.exist(albums.data);
+        albums.should.have.keys(['data', 'info', 'code']);
+        done();
+      });
+    });
+
+    it('should give an error when a bad id is given', function (done) {
+      artists.getArtistPlaylists({id: 'sdasdad'}, function (err, artist) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
+
+  describe('#getArtistEditorialPlaylists tests', { timeout: 5000 }, function () {
+    it('should be able to get an artists tracks', function (done) {
+      artists.getArtistEditorialPlaylists({ id: 'ar9966' }, function (err, albums) {
+        should.not.exist(err);
+        should.exist(albums);
+        should.exist(albums.data);
+        albums.should.have.keys(['data', 'info', 'code']);
+        done();
+      });
+    });
+
+    it('should give an error when a bad id is given', function (done) {
+      artists.getArtistEditorialPlaylists({id: 'sdasdad'}, function (err, artist) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
+
+  describe('#getArtistBios tests', { timeout: 5000 }, function () {
+    it('should be able to get an artists tracks', function (done) {
+      artists.getArtistBios({ id: 'ar9966' }, function (err, albums) {
+        should.not.exist(err);
+        should.exist(albums);
+        should.exist(albums.data);
+        albums.should.have.keys(['data', 'info', 'code']);
+        done();
+      });
+    });
+
+    it('should give an error when a bad id is given', function (done) {
+      artists.getArtistBios({id: 'sdasdad'}, function (err, artist) {
         should.exist(err);
         done();
       });
