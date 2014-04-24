@@ -1,4 +1,5 @@
 var Lab = require('lab');
+var should = require('should');
 
 var describe = Lab.experiment;
 var it = Lab.test;
@@ -6,9 +7,8 @@ var expect = Lab.expect;
 var before = Lab.before;
 var after = Lab.after;
 
-var should = require('should');
-
 var httpHelper = require('../../lib/httpHelper');
+
 describe('httpHelper tests', function () {
 
   it('should get an error if a bad url is given', function (done) {

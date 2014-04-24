@@ -29,6 +29,7 @@
     "should": "^3.3.1"
   },
   "dependencies": {
-    "hyperquest": "^0.3.0"
+    "hyperquest": "^0.3.0",
+    "joi": "^4.0.0"
   }
 }
