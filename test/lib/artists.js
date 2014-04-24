@@ -17,9 +17,9 @@ describe('Artist tests', function () {
     done();
   });
 
-  describe('#getArtistCollection tests', { timeout: 20000 }, function () {
+  describe('#getArtists tests', { timeout: 20000 }, function () {
     it('should be able to get a collection of artists with no params', function (done) {
-      artists.getArtistCollection(function (err, data) {
+      artists.getArtists(function (err, data) {
         should.not.exist(err);
         should.exist(data);
         data.should.have.keys(['data', 'info', 'code']);
@@ -29,7 +29,7 @@ describe('Artist tests', function () {
     });
 
     it('should be able to get a collection with valid params', function (done) {
-      artists.getArtistCollection({ limit: 5 }, function (err, data) {
+      artists.getArtists({ limit: 5 }, function (err, data) {
         should.not.exist(err);
         should.exist(data);
         data.should.have.keys(['data', 'info', 'code']);
@@ -40,14 +40,14 @@ describe('Artist tests', function () {
     });
 
     it('should return an error for bad params', function (done) {
-      artists.getArtistCollection({ limit: 5000 }, function (err) {
+      artists.getArtists({ limit: 5000 }, function (err) {
         should.exist(err);
         done();
       });
     });
 
     it('should be able to handle a null options', function (done) {
-      artists.getArtistCollection(null, function (err, data) {
+      artists.getArtists(null, function (err, data) {
         should.not.exist(err);
         should.exist(data);
         data.should.have.keys(['data', 'info', 'code']);
