@@ -1,6 +1,6 @@
 {
   "name": "node-beats",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "A Node.js wrapper around the server side elements of the Beats Music API",
   "main": "index.js",
   "scripts": {
