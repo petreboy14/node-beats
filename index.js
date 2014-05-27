@@ -4,7 +4,8 @@ var Artists = require('./lib/artists');
 var Genres = require('./lib/genres');
 var Highlights = require('./lib/highlights');
 var Playlists = require('./lib/playlists');
-var Search = require('./lib/Search');
+var Search = require('./lib/search');
+var Tracks = require('./lib/tracks');
 
 var Beats = function (options) {
   this.key = options.key;
@@ -37,6 +38,10 @@ for (var func in Playlists.prototype) {
 
 for (var func in Search.prototype) {
   Beats.prototype[func] = Search.prototype[func];
+}
+
+for (var func in Tracks.prototype) {
+  Beats.prototype[func] = Tracks.prototype[func];
 }
 
 module.exports = Beats;
